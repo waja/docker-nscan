@@ -1,5 +1,7 @@
 # Docker-Nscan
 
+[![](https://images.microbadger.com/badges/version/waja/nscan.svg)](https://hub.docker.com/r/waja/nscan/)
+[![](https://images.microbadger.com/badges/image/waja/nscan.svg)](https://hub.docker.com/r/waja/nscan/)
 [![Build Status](https://travis-ci.org/Cyconet/docker-nscan.svg?branch=development)](https://travis-ci.org/Cyconet/docker-nscan)
 [![Docker Build Status](https://img.shields.io/docker/build/waja/nscan.svg)](https://hub.docker.com/r/waja/nscan/)
 [![GitHub tag](https://img.shields.io/github/tag/Cyconet/docker-nscan.svg)](https://github.com/Cyconet/docker-nscan/tags)
