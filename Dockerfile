@@ -3,7 +3,8 @@ FROM alpine:3.7
 # Dockerfile Maintainer
 MAINTAINER Jan Wagner "waja@cyconet.org"
 
-RUN apk --no-cache add python && \
+RUN apk --no-cache update && apk --no-cache upgrade && \
+ apk --no-cache add python && \
  apk --no-cache add --virtual build-dependencies git && \
  git clone https://github.com/OffensivePython/Nscan /usr/local/nscan && \
  chmod +x /usr/local/nscan/latest/nscan.py && \
