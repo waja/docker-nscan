@@ -23,7 +23,7 @@ LABEL org.label-schema.name="nscan - fast internet-wide scanner" \
 RUN apk --no-cache update && apk --no-cache upgrade && \
  apk --no-cache add python && \
  apk --no-cache add --virtual build-dependencies git && \
- git clone https://github.com/OffensivePython/Nscan /usr/local/nscan && \
+ git clone --depth 1 https://github.com/OffensivePython/Nscan /usr/local/nscan && \
  chmod +x /usr/local/nscan/latest/nscan.py && \
  ln -s /usr/local/nscan/latest/nscan.py /usr/local/bin/nscan && \
  apk del build-dependencies
