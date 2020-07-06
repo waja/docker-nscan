@@ -21,7 +21,7 @@ LABEL org.label-schema.name="nscan - fast internet-wide scanner" \
     org.label-schema.vcs-branch="${VCS_BRANCH:-unknown}"
 
 RUN apk --no-cache update && apk --no-cache upgrade && \
- apk --no-cache add python && \
+ apk --no-cache add python2 && \
  apk --no-cache add --virtual build-dependencies curl tar && \
  mkdir -p /usr/local/nscan && cd /usr/local/nscan && \
  curl -L https://github.com/OffensivePython/Nscan/archive/master.tar.gz | tar xz --strip=1 && \
