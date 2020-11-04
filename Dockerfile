@@ -17,11 +17,14 @@ LABEL org.label-schema.name="nscan - fast internet-wide scanner" \
     org.label-schema.vcs-ref="${VCS_REF:-unknown}" \
     org.label-schema.vcs-branch="${VCS_BRANCH:-unknown}"
 
+# hadolint ignore=DL3017,DL3018
 RUN apk --no-cache update && apk --no-cache upgrade && \
  apk --no-cache add python2 && \
  apk --no-cache add --virtual build-dependencies curl tar && \
- mkdir -p /usr/local/nscan && cd /usr/local/nscan && \
- curl -L https://github.com/OffensivePython/Nscan/archive/master.tar.gz | tar xz --strip=1 && \
+ mkdir -p /usr/local/nscan 
+WORKDIR  /usr/local/nscan
+SHELL ["/bin/ash", "-eo", "pipefail", "-c"]
+RUN curl -L https://github.com/OffensivePython/Nscan/archive/master.tar.gz | tar xz --strip=1 && \
  chmod +x /usr/local/nscan/latest/nscan.py && \
  ln -s /usr/local/nscan/latest/nscan.py /usr/local/bin/nscan && \
  apk del build-dependencies
