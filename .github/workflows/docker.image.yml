@@ -37,3 +37,10 @@ jobs:
         TEST_STRING="$(docker run --rm -t ${IMAGE_NAME} -h | grep ^nscan  | head -1 | grep -c nscan)"
         echo "${TEST_STRING}"
         if ! [ "${TEST_STRING}" = "1" ]; then exit 1; fi
+    - name: Scan image
+      uses: Azure/container-scan@v0
+      env:
+        DOCKER_CONTENT_TRUST: 1
+      with:
+        image-name: ${{ env.IMAGE_NAME }}
+        severity-threshold: HIGH
