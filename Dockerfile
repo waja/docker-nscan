@@ -7,7 +7,8 @@ ARG VCS_REF
 ARG VCS_BRANCH
 
 # See http://label-schema.org/rc1/ and https://microbadger.com/labels
-LABEL org.label-schema.name="nscan - fast internet-wide scanner" \
+LABEL maintainer="Jan Wagner <waja@cyconet.org>" \
+    org.label-schema.name="nscan - fast internet-wide scanner" \
     org.label-schema.description="Fast Network scanner optimized for internet-wide scanning purposes on Alpine Linux based container" \
     org.label-schema.vendor="Cyconet" \
     org.label-schema.schema-version="1.0" \
