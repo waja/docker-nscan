@@ -1,3 +1,4 @@
+<!-- markdownlint-disable MD045 -->
 # Docker-Nscan
 
 [![](https://images.microbadger.com/badges/version/waja/nscan.svg)](https://hub.docker.com/r/waja/nscan/)
@@ -11,27 +12,24 @@
 
 Builds a docker image with the [nscan](https://github.com/OffensivePython/Nscan) ready to run.
 
-Running
--------
+# Running
 
 - run the docker container with:
 
-```
+```bash
 docker run --rm --net=host waja/nscan -h
 ```
 
 We don't actually _require_ `--net=host`, but if we're wanting to test native performance (or use `--source some-specific-host-IP`) then we want direct access to the relevant connections without any overhead.
 
-Building
---------
+# Building
 
-```
+```bash
 make build
 ```
 
-Get a shell in a running container
-----------------------------------
+# Get a shell in a running container
 
-```
+```bash
 make shell
 ```
