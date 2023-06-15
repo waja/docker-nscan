@@ -1,4 +1,4 @@
-FROM alpine:3.15.8
+FROM alpine:3.15.9
                                                                                 
 ARG BUILD_DATE
 ARG BUILD_VERSION
