@@ -5,6 +5,11 @@
     {
       "matchFileNames": [".github/workflows/**"],
       "pinDigests": false
+    },
+    {
+      "matchDatasources": ["docker"],
+      "matchPackageNames": ["alpine"],
+      "allowedVersions": "<3.16"
     }
   ]
 }
