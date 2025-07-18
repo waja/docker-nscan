@@ -11,11 +11,11 @@
 [![](https://img.shields.io/docker/stars/waja/nscan.svg)](https://hub.docker.com/r/waja/nscan/)
 [![](https://img.shields.io/docker/automated/waja/nscan.svg)](https://hub.docker.com/r/waja/nscan/)
 
-Builds a docker image with the [nscan](https://github.com/OffensivePython/Nscan) ready to run.
+Builds a Docker image with the [nscan](https://github.com/OffensivePython/Nscan) ready to run.
 
 ## Running
 
-- run the docker container with:
+- run the Docker container with:
 
 ```bash
 docker run --rm --net=host waja/nscan -h
