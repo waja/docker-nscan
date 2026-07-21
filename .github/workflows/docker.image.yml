@@ -130,9 +130,17 @@ jobs:
           docker buildx imagetools inspect localhost:5000/foobar/${{ env.IMAGE_NAME }}
       - name: Test the Docker image
         run: |
-          TEST_STRING="$(docker run --rm -t localhost:5000/foobar/${{ env.IMAGE_NAME }} -h | grep ^nscan  | head -1 | grep -c nscan)"
-          echo "${TEST_STRING}"
-          if ! [ "${TEST_STRING}" = "1" ]; then exit 1; fi
+          CONTAINER_OUTPUT=$(docker run --rm localhost:5000/foobar/${{ env.IMAGE_NAME }} -h | grep ^nscan  | head -1)
+          echo "Container output: $CONTAINER_OUTPUT"
+          echo "Container output (quoted): '$CONTAINER_OUTPUT'"
+
+          TEST_STRING=$(echo "${CONTAINER_OUTPUT}" | head -1 | cut -d' ' -f1)
+          echo "Extracted test string: '$TEST_STRING'"
+
+          if ! [ "${TEST_STRING}" = "nscan" ]; then
+            echo "ERROR: Expected 'nscan' but got '$TEST_STRING'"
+            exit 1
+          fi
   dockle:
     name: Run Dockle tests
     needs:
